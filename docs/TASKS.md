@@ -1,6 +1,6 @@
 # fastapi-learning-lab 任务清单（基于当前最新代码）
 
-> 当前已完成：`stage01_hello_fastapi`（基础应用、路由、测试、中文文档）。
+> 当前已完成：`stage01_hello_fastapi`、`stage02_params`、`stage03_pydantic_body`（均含应用、测试、中文文档）。
 
 ## 当前阶段（已完成）
 
@@ -15,30 +15,30 @@
 
 ### Stage 02：路径参数与查询参数
 
-- [ ] 新建目录：`stage02_params`
-- [ ] 编写 `main.py`
-  - [ ] 路径参数：`/users/{user_id}`
-  - [ ] 查询参数：`/items?limit=...&offset=...`
-  - [ ] 参数类型校验（`int`、`str`、`bool`）
-- [ ] 编写 `test_main.py`
-  - [ ] 正常参数测试
-  - [ ] 非法参数 422 测试
-- [ ] 编写 `README.md`
-  - [ ] 解释路径参数与查询参数差异
-  - [ ] 增加常见错误（422、参数类型错误）
+- [x] 新建目录：`stage02_params`
+- [x] 编写 `main.py`
+  - [x] 路径参数：`/users/{user_id}`
+  - [x] 查询参数：`/items?limit=...&offset=...`
+  - [x] 参数类型校验（`int`、`str`、`bool`）
+- [x] 编写 `test_main.py`
+  - [x] 正常参数测试
+  - [x] 非法参数 422 测试
+- [x] 编写 `README.md`
+  - [x] 解释路径参数与查询参数差异
+  - [x] 增加常见错误（422、参数类型错误）
 
 ### Stage 03：请求体与 Pydantic 模型
 
-- [ ] 新建目录：`stage03_pydantic_body`
-- [ ] 编写 `main.py`
-  - [ ] `POST /items`，使用 BaseModel
-  - [ ] 字段默认值与可选字段
-  - [ ] 响应模型 `response_model`
-- [ ] 编写 `test_main.py`
-  - [ ] 请求体合法/非法测试
-  - [ ] 响应字段断言
-- [ ] 编写 `README.md`
-  - [ ] 解释数据校验与错误返回
+- [x] 新建目录：`stage03_pydantic_body`
+- [x] 编写 `main.py`
+  - [x] `POST /items`，使用 BaseModel
+  - [x] 字段默认值与可选字段
+  - [x] 响应模型 `response_model`
+- [x] 编写 `test_main.py`
+  - [x] 请求体合法/非法测试
+  - [x] 响应字段断言
+- [x] 编写 `README.md`
+  - [x] 解释数据校验与错误返回
 
 ### Stage 04：依赖注入（Depends）
 
