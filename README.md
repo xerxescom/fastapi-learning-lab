@@ -24,7 +24,7 @@
 ```bash
 conda create -n fastapi-learning-lab python=3.12 -y
 conda activate fastapi-learning-lab
-pip install -U pip
+python -m pip install -U pip
 pip install fastapi uvicorn pytest httpx
 ```
 
