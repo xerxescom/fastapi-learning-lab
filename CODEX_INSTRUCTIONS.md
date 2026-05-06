@@ -39,7 +39,6 @@
 - pytest
 - httpx
 - SQLAlchemy 或 SQLModel，数据库阶段再引入
-- uv 作为依赖管理工具
 
 ## 代码风格
 
