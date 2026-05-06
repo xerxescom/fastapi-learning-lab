@@ -19,11 +19,11 @@
 
 ## 通用环境准备
 
-建议使用 Python 3.12。
+建议使用 Miniconda 创建 Python 3.12 虚拟环境。
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+conda create -n fastapi-learning-lab python=3.12 -y
+conda activate fastapi-learning-lab
 pip install -U pip
 pip install fastapi uvicorn pytest httpx
 ```
