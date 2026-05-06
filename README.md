@@ -1,2 +1,47 @@
 # fastapi-learning-lab
-一个面向 Python 开发者的 FastAPI 系统学习仓库： 从基础 API 到依赖注入、Pydantic、数据库、认证、异步任务、测试、部署，所有知识点都有可运行示例和中文学习文档。
+
+一个 **FastAPI 中文学习仓库**，面向有 Python 基础、希望系统掌握 FastAPI 的开发者。
+
+## 仓库目标
+
+本仓库按阶段记录 FastAPI 从常见用法到进阶用法的学习内容，并提供：
+
+- 可直接运行的最小示例代码
+- 详尽但不过度啰嗦的中文注释
+- 配套中文学习文档（README）
+- 对应自动化测试
+
+## 学习路线（持续更新）
+
+- `stage01_hello_fastapi`：FastAPI 入门与基础路由
+
+> 后续会逐步加入请求参数、Pydantic 模型、依赖注入、数据库、鉴权、测试进阶等阶段。
+
+## 通用环境准备
+
+建议使用 Python 3.12。
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+pip install -U pip
+pip install fastapi uvicorn pytest httpx
+```
+
+## 如何运行某个阶段
+
+以第一阶段为例：
+
+```bash
+cd stage01_hello_fastapi
+uvicorn main:app --reload
+```
+
+## 如何运行测试
+
+以第一阶段为例：
+
+```bash
+cd stage01_hello_fastapi
+pytest -q
+```
