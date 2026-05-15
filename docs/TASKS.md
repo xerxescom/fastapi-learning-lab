@@ -42,25 +42,25 @@
 
 ### Stage 04：依赖注入（Depends）
 
-- [ ] 新建目录：`stage04_depends`
-- [ ] 编写 `main.py`
-  - [ ] 公共查询参数依赖
-  - [ ] 简单鉴权依赖（Header Token）
-- [ ] 编写 `test_main.py`
-  - [ ] 正常请求与鉴权失败请求
-- [ ] 编写 `README.md`
-  - [ ] 解释依赖复用场景
+- [x] 新建目录：`stage04_depends`
+- [x] 编写 `main.py`
+  - [x] 公共查询参数依赖
+  - [x] 简单鉴权依赖（Header Token）
+- [x] 编写 `test_main.py`
+  - [x] 正常请求与鉴权失败请求
+- [x] 编写 `README.md`
+  - [x] 解释依赖复用场景
 
 ### Stage 05：数据库入门（SQLite + SQLModel/SQLAlchemy）
 
-- [ ] 新建目录：`stage05_sqlite`
-- [ ] 编写 `main.py`
-  - [ ] SQLite 本地库
-  - [ ] 基础 CRUD（增删改查）
-- [ ] 编写 `test_main.py`
-  - [ ] 测试隔离（临时数据库）
-- [ ] 编写 `README.md`
-  - [ ] 数据库初始化与迁移说明（入门级）
+- [x] 新建目录：`stage05_sqlite`
+- [x] 编写 `main.py`
+  - [x] SQLite 本地库
+  - [x] 基础 CRUD（增删改查）
+- [x] 编写 `test_main.py`
+  - [x] 测试隔离（临时数据库）
+- [x] 编写 `README.md`
+  - [x] 数据库初始化与迁移说明（入门级）
 
 ### Stage 06：项目结构化与路由拆分
 
