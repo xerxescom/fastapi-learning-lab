@@ -1,6 +1,6 @@
 # fastapi-learning-lab 任务清单（基于当前最新代码）
 
-> 当前已完成：`stage01_hello_fastapi`、`stage02_params`、`stage03_pydantic_body`（均含应用、测试、中文文档）。
+> 当前已完成：`stage01_hello_fastapi`、`stage02_params`、`stage03_pydantic_body`、`stage04_depends`、`stage05_sqlite`、`stage06_project_layout`（均含应用、测试、中文文档）。
 
 ## 当前阶段（已完成）
 
@@ -64,10 +64,10 @@
 
 ### Stage 06：项目结构化与路由拆分
 
-- [ ] 新建目录：`stage06_project_layout`
-- [ ] 拆分 `routers/`、`schemas/`、`services/`
-- [ ] 统一异常处理与响应格式（轻量版）
-- [ ] 完善对应测试与文档
+- [x] 新建目录：`stage06_project_layout`
+- [x] 拆分 `routers/`、`schemas/`、`services/`
+- [x] 统一异常处理与响应格式（轻量版）
+- [x] 完善对应测试与文档
 
 ---
 

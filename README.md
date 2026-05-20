@@ -14,8 +14,13 @@
 ## 学习路线（持续更新）
 
 - `stage01_hello_fastapi`：FastAPI 入门与基础路由
+- `stage02_params`：路径参数与查询参数
+- `stage03_pydantic_body`：请求体与 Pydantic 模型
+- `stage04_depends`：依赖注入（Depends）
+- `stage05_sqlite`：数据库入门（SQLite + SQLAlchemy）
+- `stage06_project_layout`：项目结构化与路由拆分
 
-> 后续会逐步加入请求参数、Pydantic 模型、依赖注入、数据库、鉴权、测试进阶等阶段。
+> 后续会继续加入配置管理、鉴权进阶、测试进阶、异步任务等阶段。
 
 ## 学习任务清单
 
