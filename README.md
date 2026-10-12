@@ -37,8 +37,9 @@
 - `stage22_logging_observability`：日志与可观测性基础
 - `stage23_lifespan`：应用生命周期与资源管理
 - `stage24_deployment`：部署入门
+- `stage25_mini_api`：综合项目 Mini Task API
 
-> 后续会继续加入综合项目阶段，整合前面的核心能力。
+> Stage 01-25 主学习路线已完成。综合项目位于 `stage25_mini_api`，整合注册、JWT、权限、任务 CRUD、分页、配置、异常与测试；后续可按各阶段 README 的小练习继续扩展。
 
 ## 学习任务清单
 

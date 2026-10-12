@@ -1,6 +1,6 @@
 # fastapi-learning-lab 任务清单（基于当前最新代码）
 
-> 当前已完成：`stage01_hello_fastapi`、`stage02_params`、`stage03_pydantic_body`、`stage04_depends`、`stage05_sqlite`、`stage06_project_layout`、`stage07_settings_env`、`stage08_alembic_migrations`、`stage09_user_register_password`、`stage10_jwt_auth`、`stage11_roles_permissions`、`stage12_response_errors`、`stage13_pagination_filtering`、`stage14_upload_static_files`、`stage15_form_cookie_session`、`stage16_middleware_cors`、`stage17_background_tasks`、`stage18_async_http`、`stage19_websocket`、`stage20_testing_advanced`、`stage21_openapi_docs`、`stage22_logging_observability`、`stage23_lifespan`、`stage24_deployment`（均含应用、测试、中文文档）。
+> 当前已完成：`stage01_hello_fastapi`、`stage02_params`、`stage03_pydantic_body`、`stage04_depends`、`stage05_sqlite`、`stage06_project_layout`、`stage07_settings_env`、`stage08_alembic_migrations`、`stage09_user_register_password`、`stage10_jwt_auth`、`stage11_roles_permissions`、`stage12_response_errors`、`stage13_pagination_filtering`、`stage14_upload_static_files`、`stage15_form_cookie_session`、`stage16_middleware_cors`、`stage17_background_tasks`、`stage18_async_http`、`stage19_websocket`、`stage20_testing_advanced`、`stage21_openapi_docs`、`stage22_logging_observability`、`stage23_lifespan`、`stage24_deployment`、`stage25_mini_api`（均含应用、测试、中文文档）。
 
 ## 当前阶段（已完成）
 
@@ -401,19 +401,21 @@
 
 ### Stage 25：综合项目 Mini API
 
-- [ ] 新建目录：`stage25_mini_api`
-- [ ] 编写 `main.py`
-  - [ ] 整合用户、鉴权、数据库、分页、异常、配置、测试
-  - [ ] 形成一个小型但完整的 FastAPI 后端项目
-  - [ ] 保持模块结构清晰，避免过度封装
-- [ ] 编写 `test_main.py`
-  - [ ] 覆盖注册、登录、鉴权、CRUD、分页、异常路径
-  - [ ] 使用测试数据库与依赖覆盖
-  - [ ] 验证主要业务流程
-- [ ] 编写 `README.md`
-  - [ ] 给出完整运行与测试说明
-  - [ ] 回顾 Stage 01-24 的关键知识点
-  - [ ] 提供后续扩展路线
+- [x] 新建目录：`stage25_mini_api`
+- [x] 编写 `main.py`
+  - [x] 整合用户、鉴权、数据库、分页、异常、配置、测试
+  - [x] 形成一个小型但完整的 FastAPI 后端项目
+  - [x] 保持模块结构清晰，避免过度封装
+- [x] 编写 `test_main.py`
+  - [x] 覆盖注册、登录、鉴权、CRUD、分页、异常路径
+  - [x] 使用测试数据库与依赖覆盖
+  - [x] 验证主要业务流程
+- [x] 编写 `README.md`
+  - [x] 给出完整运行与测试说明
+  - [x] 回顾 Stage 01-24 的关键知识点
+  - [x] 提供后续扩展路线
+
+验证结果（2026-10-12）：`86 passed`；覆盖注册与哈希、JWT 声明校验、账号状态、角色即时变化、任务所有权隔离、CRUD、分页排序过滤、错误脱敏与事务回滚。真实 HTTP/CLI 验证了重复初始化、角色升降级和重启后的数据保留。有一条 Starlette TestClient 使用 httpx 的依赖弃用提示。
 
 ---
 
