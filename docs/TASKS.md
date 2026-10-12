@@ -427,7 +427,7 @@
 - [x] 配置 GitHub Actions：Linux 全阶段测试、Windows 综合项目测试、JUnit 报告与 `CI Gate`
 - [x] 增加 PR 模板、Actions 依赖更新及 `docs/CI.md`
 - [x] 修复 Stage 04 查询参数校验异常，增加上下界与错误类型回归测试
-- [ ] 远端 PR 的完整 CI 验证通过后，由学习者检查并决定合并
+- [x] 完整 CI 验证通过，工程化改动已纳入默认主分支 `Aivor`
 
 ## 每阶段通用验收标准（DoD）
 
