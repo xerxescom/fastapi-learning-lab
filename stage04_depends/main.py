@@ -2,7 +2,7 @@
 
 from typing import Annotated
 
-from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException, Query
 from pydantic import BaseModel, Field
 
 app = FastAPI(
@@ -22,8 +22,8 @@ class CommonQueryParams(BaseModel):
 
 def get_common_query_params(
     q: str | None = None,
-    limit: int = 10,
-    offset: int = 0,
+    limit: Annotated[int, Query(ge=1, le=100)] = 10,
+    offset: Annotated[int, Query(ge=0)] = 0,
 ) -> CommonQueryParams:
     """提取并复用查询参数。"""
     return CommonQueryParams(q=q, limit=limit, offset=offset)
