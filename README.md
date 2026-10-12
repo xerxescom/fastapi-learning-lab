@@ -53,7 +53,6 @@
 conda create -n fastapi-learning-lab python=3.12 -y
 conda activate fastapi-learning-lab
 python -m pip install -U pip
-pip install fastapi uvicorn pytest httpx
 ```
 
 ## 如何运行某个阶段
@@ -62,6 +61,7 @@ pip install fastapi uvicorn pytest httpx
 
 ```bash
 cd stage01_hello_fastapi
+python -m pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
@@ -73,3 +73,19 @@ uvicorn main:app --reload
 cd stage01_hello_fastapi
 pytest -q
 ```
+
+各阶段都有独立的 `requirements.txt`。切换阶段后先安装该阶段依赖；不要在仓库根目录直接执行 `pytest`，不同阶段的同名模块需要独立进程隔离。
+
+## 自动化检查
+
+GitHub Actions 会在向默认分支 `Aivor` 提交或创建 PR 时检查阶段结构，并独立安装依赖、执行各阶段测试。综合项目额外覆盖 Windows，汇总结果见 `CI Gate`。
+
+本地可在安装所需阶段依赖后执行：
+
+```bash
+python scripts/stages.py
+python -m unittest discover -s tests_ci -v
+python scripts/stages.py --test --stage stage25_mini_api
+```
+
+全量测试、JUnit 报告及 CI 排错说明见 [自动化测试说明](docs/CI.md)。

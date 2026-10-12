@@ -1,0 +1,92 @@
+name: Stage Tests
+
+on:
+  push:
+    branches: [Aivor]
+  pull_request:
+    branches: [Aivor]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stage-tests-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    name: Stage Structure
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Test CI helpers
+        run: python -m unittest discover -s tests_ci -v
+      - name: Validate stages
+        run: python scripts/stages.py
+      - name: Generate test matrix
+        id: matrix
+        run: echo "matrix=$(python scripts/stages.py --matrix)" >> "$GITHUB_OUTPUT"
+
+  test:
+    name: ${{ matrix.stage }} / ${{ matrix.os }}
+    needs: discover
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: ${{ fromJSON(needs.discover.outputs.matrix) }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ matrix.stage }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: 'stage*/requirements*.txt'
+      - name: Install stage dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check installed dependencies
+        run: python -m pip check
+      - name: Run stage tests
+        run: python -m pytest -q -p no:cacheprovider --tb=short --junitxml=../test-results/${{ matrix.stage }}-${{ matrix.os }}.xml
+      - name: Upload test report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: tests-${{ matrix.stage }}-${{ matrix.os }}
+          path: test-results/${{ matrix.stage }}-${{ matrix.os }}.xml
+          retention-days: 7
+          if-no-files-found: warn
+
+  gate:
+    name: CI Gate
+    if: ${{ always() }}
+    needs: [discover, test]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Require all stage checks to succeed
+        env:
+          STRUCTURE_RESULT: ${{ needs.discover.result }}
+          TEST_RESULT: ${{ needs.test.result }}
+        run: |
+          echo "Stage structure: $STRUCTURE_RESULT"
+          echo "Stage tests: $TEST_RESULT"
+          if [ "$STRUCTURE_RESULT" != "success" ] || [ "$TEST_RESULT" != "success" ]; then
+            exit 1
+          fi

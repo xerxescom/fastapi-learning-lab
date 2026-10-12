@@ -419,9 +419,19 @@
 
 ---
 
+## 工程化完善
+
+- [x] 为 Stage 01-06 补齐独立依赖清单，统一所有阶段安装入口
+- [x] 新增阶段结构检查与独立进程测试脚本 `scripts/stages.py`
+- [x] 为测试工具提供单元测试，覆盖发现、缺失文件、编号、失败汇总与超时
+- [x] 配置 GitHub Actions：Linux 全阶段测试、Windows 综合项目测试、JUnit 报告与 `CI Gate`
+- [x] 增加 PR 模板、Actions 依赖更新及 `docs/CI.md`
+- [x] 修复 Stage 04 查询参数校验异常，增加上下界与错误类型回归测试
+- [ ] 远端 PR 的完整 CI 验证通过后，由学习者检查并决定合并
+
 ## 每阶段通用验收标准（DoD）
 
-- [ ] 目录中必须包含：`main.py`、`README.md`、`test_main.py`
+- [ ] 目录中必须包含：`main.py`、`README.md`、`test_main.py`、`requirements.txt`
 - [ ] 示例可直接运行
 - [ ] 中文注释聚焦关键设计点，不机械逐行注释
 - [ ] `README.md` 包含以下固定章节：
