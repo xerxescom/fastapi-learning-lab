@@ -1,0 +1,9 @@
+**
+!Dockerfile
+!requirements-runtime.txt
+!main.py
+!app/
+!app/**
+**/__pycache__
+**/*.py[cod]
+**/.env*

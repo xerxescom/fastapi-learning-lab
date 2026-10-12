@@ -19,8 +19,26 @@
 - `stage04_depends`：依赖注入（Depends）
 - `stage05_sqlite`：数据库入门（SQLite + SQLAlchemy）
 - `stage06_project_layout`：项目结构化与路由拆分
+- `stage07_settings_env`：配置管理与环境变量
+- `stage08_alembic_migrations`：数据库进阶与 Alembic 迁移
+- `stage09_user_register_password`：用户注册与密码安全
+- `stage10_jwt_auth`：JWT 登录与鉴权进阶
+- `stage11_roles_permissions`：权限与角色控制
+- `stage12_response_errors`：请求响应规范与全局异常处理
+- `stage13_pagination_filtering`：分页、排序与过滤
+- `stage14_upload_static_files`：文件上传与静态文件
+- `stage15_form_cookie_session`：表单、Cookie 与 Session 基础
+- `stage16_middleware_cors`：中间件与 CORS
+- `stage17_background_tasks`：后台任务与邮件发送模拟
+- `stage18_async_http`：异步接口与外部 HTTP 调用
+- `stage19_websocket`：WebSocket 入门
+- `stage20_testing_advanced`：测试进阶
+- `stage21_openapi_docs`：OpenAPI 文档与接口元数据
+- `stage22_logging_observability`：日志与可观测性基础
+- `stage23_lifespan`：应用生命周期与资源管理
+- `stage24_deployment`：部署入门
 
-> 后续会继续加入配置管理、鉴权进阶、测试进阶、异步任务等阶段。
+> 后续会继续加入综合项目阶段，整合前面的核心能力。
 
 ## 学习任务清单
 
